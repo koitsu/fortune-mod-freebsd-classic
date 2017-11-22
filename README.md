@@ -51,7 +51,7 @@ potentially related to classic spell/ispell.
 
 The below applies to FreeBSD HEAD (a.k.a. CURRENT, i.e. FreeBSD 12.x as of
 this writing).  However, the below commits are intended to be MFC'd (i.e.
-merged into stable/11 (FreeBSD 11.x) and stable/19 (FreeBSD 10.x)).
+merged into stable/11 (FreeBSD 11.x) and stable/10 (FreeBSD 10.x)).
 
 On November 13 2017 at ~21:55 UTC,
 [FreeBSD Port Management Team](https://www.freebsd.org/administration.html#t-portmgr)
