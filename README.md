@@ -1,4 +1,5 @@
 # Details
+
 This repository contains the original/classic FreeBSD `fortune(6)`
 datfiles, including offensives (`fortune -o`), which were present in
 FreeBSD until roughly November 13, 2017.
@@ -22,16 +23,32 @@ startrek.sp.ok
 zippy
 zippy.sp.ok
 ```
+# Common Use
+
+I will soon be submitting a new FreeBSD port called
+`misc/fortune-mod-freebsd-classic` which will install these classic
+datfiles for use.  No other changes need be done, as `fortune(6)`
+searches for files in both `/usr/share/games/fortune` as well as
+`/usr/local/share/games/fortune` (ports/pkgs install theirs in the
+latter).
 
 # Building
 
-Use of `strfile(8)` is required to create a .dat file for each respective
-fortune.  Use of the `-C` flag is a requirement.  Then, the combination
-of both the non-dat and .dat file must be placed in the `fortune(6)`
-directory search path (see `fortune -l`).  I do not know the use of the
-`.sp.ok` files, though they look related to spell/ispell.
+Use of `strfile(8)` is required to create a .dat file for each
+respective fortune.  Use of the `-C` flag is a requirement.  Then, the
+combination of both the non-dat and .dat file must be placed in the
+`fortune(6)` directory search path.
+
+Use of the environment variable `FORTUNE_PATH` can also be used, but I
+found it to be quirky; things like
+`FORTUNE_PATH=/path/to/dir fortune murphy` would regularly output
+nothing for no reason I could determine.
+
+I don't know the purpose of the `.sp.ok` files, though they look
+potentially related to classic spell/ispell.
 
 # History
+
 The below applies to FreeBSD HEAD (a.k.a. CURRENT, i.e. FreeBSD 12.x as of
 this writing).  However, the below commits are intended to be MFC'd (i.e.
 merged into stable/11 (FreeBSD 11.x) and stable/19 (FreeBSD 10.x)).
@@ -73,7 +90,7 @@ need to live on".  There was no mention or comment from Felder.
 The removal of said quotes, and said fortunes, was
 [more extensively discussed](http://mail-index.netbsd.org/current-users/2017/11/18/msg032672.html)
 on the NetBSD current-users mailing list.  Readers of the aforementioned
-mailing list post should read every single reply in the thread, as there is
-some factual and contextually relevant details pertaining to the intentions
-of said quotes.
+mailing list post should read every single reply in the thread, as there
+is some factual and contextually relevant details pertaining to the
+intentions of said quotes.
 
