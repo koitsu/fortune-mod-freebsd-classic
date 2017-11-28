@@ -116,7 +116,7 @@ Prior to their removal, the way `fortunes-o` and `fortunes-o.dat` were
 created was (to me) quite amusing:
 
 1. fortunes-o was created by essentially piping fortunes-o.real
-through `tr(1)` to rot13 its content (`fortunes-o.real` in the svn/cvs
+through `tr(1)` to rot13 its content (fortunes-o.real in the svn/cvs
 repository itself was in readable plain-text),
 
 2. fortunes-o.dat was created from the aforementioned fortunes-o file
