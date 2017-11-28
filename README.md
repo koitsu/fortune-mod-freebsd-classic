@@ -94,3 +94,44 @@ mailing list post should read every single reply in the thread, as there
 is some factual and contextually relevant details pertaining to the
 intentions of said quotes.
 
+# Older History
+
+Removal of "political propaganda" (specifically, Rush Limbaugh quotes)
+from `fortunes-o.real` was done on February 5 2013 at ~14:39 UTC by
+Dag-Erling Smorgrav (des).  Removal was done in commit r246362.
+
+fortunes-o and its related bits were removed entirely from FreeBSD on
+March 12 2013 at ~12:35 UTC by John H. Baldwin (jhb).  The commit
+message implies there was a discussion about this amongst the FreeBSD
+Core Team.  Removal was done in commit r248200.
+
+Commits:
+
+* [r246362](https://svnweb.freebsd.org/base?view=revision&revision=246362) / [git 72c8e2d](https://github.com/freebsd/freebsd/commit/72c8e2de5282a2d1848447691f49c30e83e28950)
+* [r248200](https://svnweb.freebsd.org/base?view=revision&revision=248200) / [git 369cfc7](https://github.com/freebsd/freebsd/commit/369cfc7386b7e6ca0efa2c406063e75210ab5fa2)
+
+Prior to their removal, the way `fortunes-o` and `fortunes-o.dat` were
+created was (to me) quite amusing:
+
+1. `fortunes-o` was created by essentially piping fortunes-o.real
+through `tr(1)` to rot13 its content (`fortunes-o.real` in the svn/cvs
+repository itself was in readable plain-text),
+
+2. `fortunes-o.dat was` created from the aforementioned fortunes-o file
+while using the `-x` flag to `strfile(8)`, which causes `fortune(6)` to
+rot13 the quote, "decoding" it before being shown.
+
+Best I can tell, the above two steps were done solely to keep plain-text
+"offensive words" from being stored in plain-text on a users'
+filesystem.
+
+There was also a file called `fortunes-o.fake`, which contained nothing
+more than content informing the user that "offensive" fortunes were
+essentially disabled.  The FreeBSD fortune Makefile could essentially
+could be modified in-place through `sed(1)` during the build phase, to
+change `TYPE=real` into `TYPE=fake`, thus making `fortune -o` output
+said comment:
+
+* [fortunes-o.fake](https://svnweb.freebsd.org/base/head/games/fortune/datfiles/fortunes-o.fake?revision=2491&view=markup&pathrev=248199)
+* [fortune Makefile](https://svnweb.freebsd.org/base/head/games/fortune/datfiles/Makefile?revision=174426&view=markup&pathrev=288484)
+
