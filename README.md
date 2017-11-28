@@ -11,6 +11,8 @@ prior to their removal in r325781 / git 0271df5.
 
 ```
 fortunes
+fortunes-o
+fortunes-o.sp.ok
 fortunes.sp.ok
 gerrold.limerick
 limerick
