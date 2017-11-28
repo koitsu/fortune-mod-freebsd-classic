@@ -115,12 +115,12 @@ Commits:
 Prior to their removal, the way `fortunes-o` and `fortunes-o.dat` were
 created was (to me) quite amusing:
 
-1. `fortunes-o` was created by essentially piping fortunes-o.real
+1. fortunes-o was created by essentially piping fortunes-o.real
 through `tr(1)` to rot13 its content (`fortunes-o.real` in the svn/cvs
 repository itself was in readable plain-text),
 
-2. `fortunes-o.dat was` created from the aforementioned fortunes-o file
-while using the `-x` flag to `strfile(8)`, which causes `fortune(6)` to
+2. fortunes-o.dat was created from the aforementioned fortunes-o file
+while using the `-x` flag to `strfile(8)`, which causes `fortune` to
 rot13 the quote, "decoding" it before being shown.
 
 Best I can tell, the above two steps were done solely to keep plain-text
