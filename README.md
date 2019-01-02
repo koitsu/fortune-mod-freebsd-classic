@@ -27,11 +27,11 @@ zippy.sp.ok
 ```
 # Common Use
 
-I will soon be submitting a new FreeBSD port called
-`misc/fortune-mod-freebsd-classic` which will install these classic
-datfiles for use.  No other changes need be done, as `fortune(6)`
-searches for files in both `/usr/share/games/fortune` as well as
-`/usr/local/share/games/fortune` (ports/pkgs install theirs in the
+The FreeBSD pkg `fortune-mod-freebsd-classic` (port:
+`misc/fortune-mod-freebsd-classic`) can be used to install these classic
+datfiles for use.  No other changes need be done, as `fortune(6)` searches for
+files in both `/usr/share/games/fortune` as well as
+`/usr/local/share/games/fortune` (the pkg/port installs the files in the
 latter).
 
 # Building
@@ -52,7 +52,7 @@ potentially related to classic spell/ispell.
 # History
 
 The below applies to FreeBSD HEAD (a.k.a. CURRENT, i.e. FreeBSD 12.x as of
-this writing).  However, the below commits are intended to be MFC'd (i.e.
+November 21, 2017).  However, the below commits are intended to be MFC'd (i.e.
 merged into stable/11 (FreeBSD 11.x) and stable/10 (FreeBSD 10.x)).
 
 On November 13 2017 at ~21:55 UTC,
