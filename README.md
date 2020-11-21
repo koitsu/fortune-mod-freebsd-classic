@@ -123,16 +123,14 @@ repository itself was in readable plain-text),
 while using the `-x` flag to `strfile(8)`, which causes `fortune` to
 rot13 the quote, "decoding" it before being shown.
 
-Best I can tell, the above two steps were done solely to keep plain-text
-"offensive words" from being stored in plain-text on a users'
-filesystem.
+Best I can tell, the above two steps were done solely to keep "offensive
+words" from being stored in plain-text on a users' filesystem.
 
 There was also a file called `fortunes-o.fake`, which contained nothing
-more than content informing the user that "offensive" fortunes were
-essentially disabled.  The FreeBSD fortune Makefile could essentially
-could be modified in-place through `sed(1)` during the build phase, to
-change `TYPE=real` into `TYPE=fake`, thus making `fortune -o` output
-said comment:
+but content informing the user that "offensive" fortunes were essentially
+disabled.  The FreeBSD fortune Makefile could then be modified in-place
+through `sed(1)` during the build phase, to change `TYPE=real` into
+`TYPE=fake`, thus making `fortune -o` output said message:
 
 * [fortunes-o.fake](https://svnweb.freebsd.org/base/head/games/fortune/datfiles/fortunes-o.fake?revision=2491&view=markup&pathrev=248199)
 * [fortune Makefile](https://svnweb.freebsd.org/base/head/games/fortune/datfiles/Makefile?revision=174426&view=markup&pathrev=288484)
