@@ -75,11 +75,10 @@ A day later, on November 14 2017 at ~21:30 UTC,
 member Benno Rice (benno) removed all the fortune datfiles, excluding
 `freebsd-tips` and `freebsd-tips.dat`.  All removed files were
 subsequently added to `ObsoleteFiles.inc` (i.e. will be removed during
-`make delete-old`).
-
-[r325828 / git a7833d5](#commit-history) resulted in
+`make delete-old`).  Removal was done in
+[r325828 / git a7833d5](#commit-history).  This change also resulted in
 [a brief discussion](https://lists.freebsd.org/pipermail/svn-src-all/2017-November/thread.html#153749)
-on the FreeBSD mailing list svn-src-all:
+on the FreeBSD mailing list svn-src-all.  Some references:
 
 * Rodney W. Grimes (rgrimes) [cited the need for r325829](https://lists.freebsd.org/pipermail/svn-src-all/2017-November/153755.html)
 * Cy Schubert (cy) [proposed removing fortune altogether](https://lists.freebsd.org/pipermail/svn-src-all/2017-November/153787.html)
