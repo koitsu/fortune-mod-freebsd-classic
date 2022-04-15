@@ -53,7 +53,7 @@ potentially related to classic spell/ispell.
 
 Some fortunes were moved from standard to offensive on February 13th
 2011 at ~18:18 UTC by Bruce Cran (brucec).  This migration was done in
-[r218650 / git d886030](#commit-history)
+[r218650 / git d886030](#commit-history).
 
 Removal of "political propaganda" (specifically, Rush Limbaugh quotes)
 from `fortunes-o.real` was done on February 5 2013 at ~14:39 UTC by
