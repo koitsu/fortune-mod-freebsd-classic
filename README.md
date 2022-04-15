@@ -5,7 +5,7 @@ datfiles, including offensives (`fortune -o`), which were present in
 FreeBSD until roughly November 13, 2017.
 
 These files are direct copies from the FreeBSD repository, immediately
-prior to their removal in [r325781 / git 0271df5](#history).
+prior to their removal in [r325781 / git 0271df5](#commit-history).
 
 # Files
 
@@ -51,9 +51,19 @@ potentially related to classic spell/ispell.
 
 # History
 
-The below applies to FreeBSD HEAD (a.k.a. CURRENT, i.e. FreeBSD 12.x as of
-November 21, 2017).  However, the below commits are intended to be MFC'd (i.e.
-merged into stable/11 (FreeBSD 11.x) and stable/10 (FreeBSD 10.x)).
+Some fortunes were moved from standard to offensive on February 13th
+2011 at ~18:18 UTC by Bruce Cran (brucec).  This migration was done in
+[r218650 / git d886030](#commit-history)
+
+Removal of "political propaganda" (specifically, Rush Limbaugh quotes)
+from `fortunes-o.real` was done on February 5 2013 at ~14:39 UTC by
+Dag-Erling Smorgrav (des).  Removal was done in
+[r246362 / git 72c8e2d](#commit-history).
+
+fortunes-o and its related bits were removed entirely from FreeBSD on
+March 12 2013 at ~12:35 UTC by John H. Baldwin (jhb).  The commit
+message implies there was a discussion about this amongst the FreeBSD
+Core Team.  Removal was done in [r248200 / git 369cfc7](#commit-history).
 
 On November 13 2017 at ~21:55 UTC,
 [FreeBSD Port Management Team](https://www.freebsd.org/administration.html#t-portmgr)
@@ -67,13 +77,7 @@ member Benno Rice (benno) removed all the fortune datfiles, excluding
 subsequently added to `ObsoleteFiles.inc` (i.e. will be removed during
 `make delete-old`).
 
-Commits:
-
-* [r325781](https://svnweb.freebsd.org/base?view=revision&revision=325781) / [git 0271df5](https://github.com/freebsd/freebsd/commit/0271df5714d9ce5274f82889febb6536a2fdba59)
-* [r325828](https://svnweb.freebsd.org/base?view=revision&revision=325828) / [git a7833d5](https://github.com/freebsd/freebsd/commit/a7833d533faa497dfc14b6873380ecad33b19f04)
-* [r325829](https://svnweb.freebsd.org/base?view=revision&revision=325829) / [git dfae4e4](https://github.com/freebsd/freebsd/commit/dfae4e4a6521a6fd13d1a1b94932f4ed63df3d01)
-
-r325828 resulted in
+[r325828 / git a7833d5](#commit-history) resulted in
 [a brief discussion](https://lists.freebsd.org/pipermail/svn-src-all/2017-November/thread.html#153749)
 on the FreeBSD mailing list svn-src-all:
 
@@ -96,24 +100,19 @@ mailing list post should read every single reply in the thread, as there
 is some factual and contextually relevant details pertaining to the
 intentions of said quotes.
 
-# Older History
+# Commit History
 
-Removal of "political propaganda" (specifically, Rush Limbaugh quotes)
-from `fortunes-o.real` was done on February 5 2013 at ~14:39 UTC by
-Dag-Erling Smorgrav (des).  Removal was done in commit r246362.
+* 2011-02-13 18:18 UTC: [r218650](https://svnweb.freebsd.org/base?view=revision&revision=218650) / [git d886030](https://github.com/freebsd/freebsd/commit/d886030b8a9adc87d97d42a9b686b62fcf283a1a)
+* 2013-02-05 14:39 UTC: [r246362](https://svnweb.freebsd.org/base?view=revision&revision=246362) / [git 72c8e2d](https://github.com/freebsd/freebsd/commit/72c8e2de5282a2d1848447691f49c30e83e28950)
+* 2013-03-12 12:35 UTC: [r248200](https://svnweb.freebsd.org/base?view=revision&revision=248200) / [git 369cfc7](https://github.com/freebsd/freebsd/commit/369cfc7386b7e6ca0efa2c406063e75210ab5fa2)
+* 2017-11-13 21:55 UTC: [r325781](https://svnweb.freebsd.org/base?view=revision&revision=325781) / [git 0271df5](https://github.com/freebsd/freebsd/commit/0271df5714d9ce5274f82889febb6536a2fdba59)
+* 2017-11-14 21:18 UTC: [r325828](https://svnweb.freebsd.org/base?view=revision&revision=325828) / [git a7833d5](https://github.com/freebsd/freebsd/commit/a7833d533faa497dfc14b6873380ecad33b19f04)
+* 2017-11-14 21:31 UTC: [r325829](https://svnweb.freebsd.org/base?view=revision&revision=325829) / [git dfae4e4](https://github.com/freebsd/freebsd/commit/dfae4e4a6521a6fd13d1a1b94932f4ed63df3d01)
 
-fortunes-o and its related bits were removed entirely from FreeBSD on
-March 12 2013 at ~12:35 UTC by John H. Baldwin (jhb).  The commit
-message implies there was a discussion about this amongst the FreeBSD
-Core Team.  Removal was done in commit r248200.
+# fortunes-o and fortunes-o.dat generation
 
-Commits:
-
-* [r246362](https://svnweb.freebsd.org/base?view=revision&revision=246362) / [git 72c8e2d](https://github.com/freebsd/freebsd/commit/72c8e2de5282a2d1848447691f49c30e83e28950)
-* [r248200](https://svnweb.freebsd.org/base?view=revision&revision=248200) / [git 369cfc7](https://github.com/freebsd/freebsd/commit/369cfc7386b7e6ca0efa2c406063e75210ab5fa2)
-
-Prior to their removal, the way `fortunes-o` and `fortunes-o.dat` were
-created was (to me) quite amusing:
+Prior to their removal, the way offensives (`fortunes-o` and
+`fortunes-o.dat`) were created was, to me, quite amusing:
 
 1. fortunes-o was created by essentially piping fortunes-o.real
 through `tr(1)` to rot13 its content (fortunes-o.real in the svn/cvs
