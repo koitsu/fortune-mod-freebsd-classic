@@ -5,7 +5,7 @@ datfiles, including offensives (`fortune -o`), which were present in
 FreeBSD until roughly November 13, 2017.
 
 These files are direct copies from the FreeBSD repository, immediately
-prior to their removal in r325781 / git 0271df5.
+prior to their removal in [r325781 / git 0271df5](#history).
 
 # Files
 
